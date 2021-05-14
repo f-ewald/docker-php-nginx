@@ -9,3 +9,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.4.0
+        with:
+          push: false
+          tags: fewald/nginx-php7
